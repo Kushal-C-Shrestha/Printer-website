@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <!-- Linking style.css to main html  -->
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      html {
+        background-color: white;
+      }
+
+      body {
+        font-family: Poppins;
+      }
+
+      .webpage {
+        padding: 60px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      /* Styling for the background image */
+      .image-box {
+        height: 450px;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url(/Images/aboutus1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: local;
+      }
+
+      .image-box h3 {
+        font-size: xx-large;
+        text-align: right;
+        color: white;
+        padding-right: 50px;
+        margin-bottom: 15px;
+      }
+
+      /* Styling the description section of the team */
+      #us {
+        border: solid white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: justify;
+        font-size: 23px;
+        width: 100%;
+        height: 375px;
+        background-color: white;
+        margin-bottom: 100px;
+      }
+
+      .text {
+        padding: 50px;
+        width: 100%;
+        height: 250px;
+        color: black;
+        font-size: 115%;
+        font-family: georgia;
+      }
+
+      /* Styling the section introducing team members */
+      #title {
+        text-align: center;
+        font-size: xxx-large;
+        font-weight: bolder;
+        color: black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 40px;
+        margin-bottom: 100px;
+      }
+
+      .title-one {
+        text-align: center;
+        font-size: xxx-large;
+        font-weight: bolder;
+        color: black;
+        margin-bottom: 55px;
+      }
+
+      /* Styling section of meet our team */
+      #team {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 40px;
+        margin-bottom: 100px;
+      }
+
+      .member {
+        border: 0px solid white;
+        width: 300px;
+        height: 400px;
+        margin-right: 20px;
+        background-color: #efefef;
+      }
+
+      .member:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .member img {
+        width: 100%;
+        height: 230px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .info {
+        padding-top: 20px;
+        text-align: center;
+      }
+
+      .info table {
+        width: 250px;
+      }
+
+      .social img {
+        height: 35px;
+        width: 35px;
+        margin-right: 10px;
+      }
+
+      #contact {
+        text-align: left;
+        font-size: 23px;
+        background-color: white;
+        align-items: center;
+        padding-left: 40px;
+      }
+
+      .contact-text {
+        border: solid#EEEEEE;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        height: 180px;
+        padding: 40px;
+        margin-bottom: 60px;
+      }
+
+      .text-two {
+        color: black;
+        font-size: x-large;
+        text-align: center;
+        width: 100%;
+      }
+
+      .content {
+        display: flex;
+        background-color: white;
+        height: 540px;
+        padding: 50px;
+      }
+
+      .div-one {
+        display: flex;
+        padding: 10px;
+      }
+
+      .div-one input,
+      textarea {
+        width: 265px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        font-size: 15px;
+        border-radius: 5px;
+      }
+
+      .value {
+        margin: 10px;
+      }
+
+      .div-two {
+        padding: 20px;
+      }
+
+      .div-two input,
+      textarea {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        font-size: 15px;
+        border-radius: 5px;
+      }
+
+      .div-three {
+        padding: 20px;
+      }
+
+      .div-three input,
+      textarea {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        font-size: 15px;
+        border-radius: 5px;
+      }
+
+      .left {
+        flex-basis: 70%;
+        padding-left: 40px;
+        padding-right: 40px;
+        background-color: white;
+      }
+
+      .right {
+        flex-basis: 40%;
+        padding: 25px;
+        background-image: url("/Images/contact.jpg");
+        background-size: cover;
+      }
+
+      button {
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 60px;
+        background-color: black;
+        color: white;
+      }
+
+      /* Styling for the button */
+      button:hover {
+        background-color: skyblue;
+      }
+
+      /* Styling for the research section */
+      .research {
+        padding: 10px;
+      }
+
+      .compare {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* styling the research page */
+      .research_container {
+        margin: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Home Section Start-->
+    <header class="header_main">
+      <div class="header_main_logo">
+        <a href="/index.html"
+          ><img src="/Images/logo-white.png" alt="Logo"
+        /></a>
+      </div>
+      <!-- Navbar Section Start-->
+      <nav class="header_main_nav">
+        <ul>
+          <li>
+            <a href="/index.html">Home</a>
+          </li>
+          <li><a href="/webpages/products.html">Shop Now</a></li>
+          <li><a href="/webpages/blog.html">Blog</a></li>
+          <li><a href="/webpages/research.html">Research</a></li>
+          <li>
+            <a
+              href="/webpages/about.html"
+              style="
+                text-decoration: underline;
+                text-underline-offset: 8px;
+                color: white;
+              "
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="header_main_profile">
+        <img src="/Images/search.png" />
+        <img src="/Images/shopping-cart.png" />
+        <img src="/Images/user-round.png" alt="User Image" />
+      </div>
+    </header>
+    <!-- Navbar Section End -->
+
+    <!--About us section starts-->
+
+    <div class="image-box">
+      <h3><br />UNLEASH THE POWER</h3>
+      <h3>OF PRINTING</h3>
+      <h3>EXCELLENCE !</h3>
+    </div>
+
+    <section class="webpage">
+      <h1 class="title-one">Who are we?</h1>
+      <!--Descrpition of who we are-->
+      <div id="us">
+        <p class="text">
+          Our shop has printers from industry giants like hp, Canon, Epson,
+          Xerox and Samsung among many others. Whether you are looking at
+          printing large volumes of text documents or high-res photographs you
+          will find just the kind of printer that meets your needs.
+          <br />
+          <br />
+          We are a team of 3 members from
+          <span style="color: skyblue">C3 (Team 1)</span>. After days of
+          reasearching, together we created the frontend of our printer shop. We
+          have required skills set for design and programming. With our teamwork
+          and efforts, we created this user-friendly website that showcases the
+          new category of printers.We are committed to working collaboratively
+          and efficiently, ensuring that we meets the expectations of our
+          customers.
+        </p>
+      </div>
+
+      <h1 id="title">Meet our Team</h1>
+      <!-- Section that contains each team member's information-->
+      <section id="team">
+        <div class="member">
+          <img src="/Images/kushal.jpg" alt="photo" />
+          <div class="info">
+            <h3>Kushal Shrestha</h3>
+            <h4>23050337</h4>
+            <br />
+            <table>
+              <tr>
+                <th>
+                  <a
+                    class="social"
+                    href="https://www.instagram.com/_stha_kushal_"
+                    target="_blank"
+                    ><img
+                      src="
+                /Images/instagram.256x256.png"
+                  /></a>
+                </th>
+                <th>
+                  <a class="social" href="Kushal.html" target="_blank"
+                    ><img src="/Images/User.png"
+                  /></a>
+                </th>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="member">
+          <img src="/images/slesha.jpg" alt="photo" />
+          <div class="info">
+            <h3>Slesha Rawal</h3>
+            <h4>23050305</h4>
+            <br />
+            <table>
+              <tr>
+                <th>
+                  <a
+                    class="social"
+                    href="https://www.instagram.com/_slushiee/"
+                    target="_blank"
+                    ><img src="/Images/instagram.256x256.png"
+                  /></a>
+                </th>
+                <th>
+                  <a class="social" href="Slesha.html" target="_blank"
+                    ><img src="/Images/User.png"
+                  /></a>
+                </th>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="member">
+          <img src="/Images/aseem.webp" alt="photo" />
+          <div class="info">
+            <h3>Aseem Rai</h3>
+            <h4>23047650</h4>
+            <br />
+            <table>
+              <tr>
+                <th>
+                  <a
+                    class="social"
+                    href="https://www.instagram.com/aseem_rai__"
+                    target="_blank"
+                    ><img src="/Images/instagram.256x256.png"
+                  /></a>
+                </th>
+                <th>
+                  <a class="social" href="Aseem.html" target="_blank"
+                    ><img src="/Images/User.png"
+                  /></a>
+                </th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <h1 class="title-one">CONTACT US</h1>
+      <br />
+      <!-- Section that contains contact information -->
+
+      <section class="middle">
+        <div class="contact-text">
+          <p class="text-two">
+            More than just a website ♡ We'd love to hear form you ♡ Connect with
+            us....<br />
+            You have got some Qs and we've got tons of A's ♡<br />
+            Ask us about anything an order, a product....anything we can help
+            with!!
+          </p>
+        </div>
+      </section>
+
+      <!-- Section that contains a contact form -->
+      <section id="contact">
+        <div class="content">
+          <div class="left">
+            <form name="messageform" onsubmit="validateform()">
+              <!-- Form fields for name, phone, email, and message -->
+              <div class="div-one">
+                <div class="value">
+                  <label for="name">Name*</label>
+                  <input type="text" id="name" name="name" />
+                </div>
+                <div class="value">
+                  <label for="phone">Phone*</label>
+                  <input type="phone" id="phone" name="phone" />
+                </div>
+              </div>
+
+              <div class="div-two">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" />
+              </div>
+
+              <div class="div-three">
+                <label>Your Message</label>
+                <br />
+                <textarea
+                  rows="8 cols=25"
+                  name="message"
+                  placeholder="enter your message"
+                ></textarea>
+              </div>
+
+              <!-- send button for the message -->
+              <button type="submit">SEND</button>
+            </form>
+          </div>
+
+          <!-- this div is empty because background image is added with the help of css -->
+          <div class="right"></div>
+        </div>
+      </section>
+    </section>
+
+    <footer
+      style="
+        width: 100%;
+        height: 390px;
+        background-color: black;
+        margin-top: 100px;
+      "
+    >
+      <div class="footer">
+        <div class="footer_container">
+          <div class="footer_content">
+            <h3>Customer Care</h3>
+            <p>FAQs</p>
+            <p>Return & Exchanges</p>
+            <p>Shipping</p>
+            <p>Terms of Service</p>
+            <p>Privacy Policy</p>
+          </div>
+          <div class="footer_content">
+            <h3>More About Us</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="/webpages/products.html">Shop Now</a></li>
+              <li><a href="/webpages/Blog.html">Blog</a></li>
+              <li><a href="/webpages/research.html">Reasearch</a></li>
+              <li><a href="/webpages/about.html">About US</a></li>
+            </ul>
+          </div>
+          <div class="footer_content">
+            <h3>Contact Us</h3>
+            <p>01-0245670</p>
+            <p>lime@gmail.com</p>
+          </div>
+        </div>
+        <div class="social_links">
+          <a href="https://www.facebook.com/"
+            ><img
+              src="/Images/facebook.png"
+              alt="Facebook icon"
+              width="30px"
+              height="30px"
+          /></a>
+          <a href="https://www.instagram.com/"
+            ><img
+              src="/Images/instagram.png"
+              alt="Instagram icon"
+              width="30px"
+              height="30px"
+          /></a>
+          <a href="https://www.linkedin.com/"
+            ><img
+              src="/Images/linkedin.png"
+              alt="Linkedin icon"
+              width="30px"
+              height="30px"
+          /></a>
+        </div>
+        <div class="footer_logo">
+          <a href="index.html"
+            ><img
+              src="/Images/logo-white.png"
+              alt="Logo"
+              width="80px"
+              ;
+              height="30px"
+          /></a>
+        </div>
+      </div>
+      <div class="footer_copyright">
+        <p>Copyright &copy; 2024 Lime</p>
+      </div>
+    </footer>
+
+    <script>
+      function validateform() {
+        var name = document.forms["messageform"]["name"].value;
+        var phone = document.forms["messageform"]["phone"].value;
+        var email = document.forms["messageform"]["email"].value;
+        var message = document.forms["messageform"]["message"].value;
+
+        if (name == "" || phone == "" || email == "" || message == "") {
+          alert("please fill all the fields💖");
+        } else {
+          alert("thank you for your message💖");
+        }
+      }
+    </script>
+  </body>
+</html>

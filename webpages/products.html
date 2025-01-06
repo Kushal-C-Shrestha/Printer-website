@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      /* setting all the default margin and padding to 0 so that we can give them ourselves */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Poppins;
+      }
+
+      body {
+        background-color: #dee2e6;
+      }
+
+      /* css for the main products part  */
+      main {
+        display: flex;
+        margin: 30px 30px;
+        justify-content: space-between;
+      }
+
+      /* dividing the main container into two parts filter and products  */
+      .filter {
+        background-color: #ffffff;
+        width: 335px;
+        height: 500px;
+        padding: 20px;
+      }
+
+      .filter-header {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      .filter-sections p {
+        font-weight: bold;
+
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+
+      .filter-sections label {
+        font-size: 16px;
+
+        margin-left: 5px;
+        font-weight: 500;
+      }
+
+      .filter-sections input {
+        height: 15px;
+        width: 15px;
+      }
+      .filter-format {
+        margin: 20px 0px;
+      }
+
+      /* css for the container that will have all the products  */
+      .main-products-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+      }
+
+      .product-card {
+        width: 260px;
+        height: 375px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+        transition: all ease-in-out 0.2s;
+      }
+
+      .product-card-contents {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+      }
+
+      .product-card:hover {
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-card-contents p {
+        color: black;
+      }
+      .product-card img {
+        height: 195px;
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      .product-card-name {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .product-card-desc {
+        font-size: 14px;
+        font-weight: 700;
+        font-family: Poppins thin;
+      }
+      .product-card-price {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .product-card-button {
+        height: 35px;
+        font-size: 16px;
+        color: white;
+        background-color: #000000; /*rgb(255, 184, 52)*/
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nav bar starts -->
+    <header class="header_main">
+      <div class="header_main_logo">
+        <a href="/index.html"
+          ><img src="/images/logo-white.png" alt="Logo"
+        /></a>
+      </div>
+      <!-- Navbar Section start-->
+      <nav class="header_main_nav">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li>
+            <a
+              href="/webpages/products.html"
+              style="
+                text-decoration: underline;
+                text-underline-offset: 8px;
+                color: white;
+              "
+              >Shop Now</a
+            >
+          </li>
+          <li><a href="/webpages/blog.html">Blog</a></li>
+          <li><a href="/webpages/research.html">Research</a></li>
+          <li><a href="/webpages/about.html">About Us</a></li>
+        </ul>
+      </nav>
+      <div class="header_main_profile">
+        <img src="/images/search.png" alt="" />
+        <img src="/images/shopping-cart.png" onclick="cartDisplay()" />
+        <img src="/images/user-round.png" alt="User Image" />
+      </div>
+    </header>
+    <!-- Nav-bar-ends -->
+
+    <!-- Main-container-section -->
+    <main id="main-container">
+      <!-- Filter part Starts -->
+      <div class="filter">
+        <div class="filter-header">
+          <div class="filter-img">
+            <img src="/images/list-filter.png" alt="" height="30px" />
+          </div>
+          <p style="color: black">Filter</p>
+        </div>
+        <div class="filter-sections">
+          <div class="by-categories filter-format">
+            <p>Category:</p>
+            <input
+              type="checkbox"
+              name="Ink Jet"
+              onclick="filterCategory('Ink Jet')"
+            /><label>Ink Jet</label><br />
+            <input
+              type="checkbox"
+              name="Laser"
+              onclick="filterCategory('Laser')"
+            /><label>Laser</label><br />
+            <input
+              type="checkbox"
+              name="Thermal"
+              onclick="filterCategory('Thermal')"
+            /><label>Thermal</label>
+          </div>
+          <div class="by-color-output filter-format">
+            <p>Color output:</p>
+            <input
+              type="checkbox"
+              name="color"
+              id="output-color"
+              onclick="filterOutput('color')"
+            /><label>Color</label><br />
+            <input
+              type="checkbox"
+              name="bw"
+              id="output-bw"
+              onclick="filterOutput('bw')"
+            /><label>Black and White</label>
+          </div>
+          <div class="by-brands filter-format">
+            <p>Brands:</p>
+            <input
+              type="checkbox"
+              name="brand"
+              id="brand-canon"
+              onclick="filterBrand('Canon')"
+            /><label>Canon</label><br />
+            <input
+              type="checkbox"
+              name="brand"
+              id="brand-hp"
+              onclick="filterBrand('HP')"
+            /><label>HP</label><br />
+            <input
+              type="checkbox"
+              name="brand"
+              id="brand-brother"
+              onclick="filterBrand('Brother')"
+            /><label>Brother</label><br />
+            <input
+              type="checkbox"
+              name="brand"
+              id="brand-epson"
+              onclick="filterBrand('Epson')"
+            /><label>Epson</label><br />
+            <input
+              type="checkbox"
+              name="brand"
+              id="brand-samsung"
+              onclick="filterBrand('Samsung')"
+            /><label>Samsung</label>
+          </div>
+        </div>
+      </div>
+      <!-- Filter-part-ends -->
+
+      <!-- container for products    -->
+      <div class="main-products-container"></div>
+    </main>
+    <!-- Footer Section Start -->
+    <footer
+      style="
+        width: 100%;
+        height: 390px;
+        background-color: black;
+        margin-top: 100px;
+      "
+    >
+      <div class="footer">
+        <div class="footer_container">
+          <div class="footer_content">
+            <h3>Customer Care</h3>
+            <p>FAQs</p>
+            <p>Return & Exchanges</p>
+            <p>Shipping</p>
+            <p>Terms of Service</p>
+            <p>Privacy Policy</p>
+          </div>
+          <div class="footer_content">
+            <h3>More About Us</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="/webpages/products.html">Shop Now</a></li>
+              <li><a href="/webpages/blog.html">Blog</a></li>
+              <li><a href="/webpages/research.html">Reasearch</a></li>
+              <li><a href="/webpages/about.html">About US</a></li>
+            </ul>
+          </div>
+          <div class="footer_content">
+            <h3>Contact Us</h3>
+            <p>01-0245670</p>
+            <p>lime@gmail.com</p>
+          </div>
+        </div>
+        <div class="social_links">
+          <a href="https://www.facebook.com/"
+            ><img
+              src="/Images/facebook.png"
+              alt="Facebook icon"
+              width="30px"
+              height="30px"
+          /></a>
+          <a href="https://www.instagram.com/"
+            ><img
+              src="/Images/instagram.png"
+              alt="Instagram icon"
+              width="30px"
+              height="30px"
+          /></a>
+          <a href="https://www.linkedin.com/"
+            ><img
+              src="/Images/linkedin.png"
+              alt="Linkedin icon"
+              width="30px"
+              height="30px"
+          /></a>
+        </div>
+        <div class="footer_logo">
+          <a href="index.html"
+            ><img
+              src="/Images/logo-white.png"
+              alt="Logo"
+              width="80px"
+              ;
+              height="30px"
+          /></a>
+        </div>
+      </div>
+      <div class="footer_copyright">
+        <p>Copyright &copy; 2024 Lime</p>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+    <script src="/script.js"></script>
+  </body>
+</html>
